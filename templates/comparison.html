@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Model Comparison</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Model Comparison</h2>
+      <canvas id="accuracyChart" width="800" height="400"></canvas>
+      <div class="actions">
+        <a class="btn" href="/">Home</a>
+        <a class="btn ghost" href="/recommend">Recommend</a>
+      </div>
+    </div>
+    <script>
+      fetch('/static/data/metrics.json')
+        .then(r => r.json())
+        .then(data => {
+          const acc = data.accuracy_percent;
+          const labels = Object.keys(acc);
+          const values = Object.values(acc);
+
+          const ctx = document.getElementById('accuracyChart').getContext('2d');
+          new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: labels,
+              datasets: [{
+                label: 'Accuracy (%)',
+                data: values,
+                backgroundColor: '#4caf50'
+              }]
+            },
+            options: { scales: { y: { beginAtZero: true, max: 100 } } }
+          });
+        })
+        .catch(err => console.error('Could not load metrics:', err));
+    </script>
+  </body>
+  </html>
