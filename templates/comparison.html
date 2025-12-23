@@ -3,17 +3,39 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Model Comparison</title>
+    <title>ML Model Performance Analytics</title>
     <link rel="stylesheet" href="/static/css/styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <div class="container">
-      <h2>Model Comparison</h2>
-      <canvas id="accuracyChart" width="800" height="400"></canvas>
-      <div class="actions">
-        <a class="btn" href="/">Home</a>
-        <a class="btn ghost" href="/recommend">Recommend</a>
+      <div class="about-card">
+        <h2>📊 Machine Learning Model Performance</h2>
+        <p>Our crop recommendation system evaluates multiple ML algorithms to ensure robust and accurate predictions. The chart below shows the accuracy comparison across different models trained on our comprehensive agricultural dataset.</p>
+
+        <div style="margin: 40px 0;">
+          <canvas id="accuracyChart" width="800" height="400"></canvas>
+        </div>
+
+        <div class="cards" style="margin-top: 40px;">
+          <div class="card">
+            <h3>🏆 Best Performer</h3>
+            <p><strong>Random Forest (99.3%)</strong> - Selected as our production model for its excellent balance of accuracy and robustness.</p>
+          </div>
+          <div class="card">
+            <h3>🎯 High Accuracy</h3>
+            <p>Multiple models achieve over 98% accuracy, demonstrating the quality of our dataset and feature engineering.</p>
+          </div>
+          <div class="card">
+            <h3>⚡ Real-time Deployment</h3>
+            <p>The Random Forest model provides fast predictions while maintaining high accuracy for real-world agricultural applications.</p>
+          </div>
+        </div>
+
+        <div class="actions" style="margin-top: 40px;">
+          <a class="btn" href="/recommend">🚀 Get Recommendation</a>
+          <a class="btn ghost" href="/">🏠 Back to Home</a>
+        </div>
       </div>
     </div>
     <script>
@@ -32,10 +54,35 @@
               datasets: [{
                 label: 'Accuracy (%)',
                 data: values,
-                backgroundColor: '#4caf50'
+                backgroundColor: [
+                  '#2e7d32', '#66bb6a', '#a5d6a7', '#c8e6c9',
+                  '#8bc34a', '#4caf50', '#9ccc65'
+                ],
+                borderRadius: 8,
+                borderSkipped: false
               }]
             },
-            options: { scales: { y: { beginAtZero: true, max: 100 } } }
+            options: {
+              responsive: true,
+              plugins: {
+                legend: { display: false },
+                title: {
+                  display: true,
+                  text: 'Model Accuracy Comparison',
+                  font: { size: 16, weight: 'bold' }
+                }
+              },
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  max: 100,
+                  ticks: { callback: value => value + '%' }
+                },
+                x: {
+                  ticks: { maxRotation: 45, minRotation: 45 }
+                }
+              }
+            }
           });
         })
         .catch(err => console.error('Could not load metrics:', err));

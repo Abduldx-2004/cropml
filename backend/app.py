@@ -18,7 +18,10 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for
 
 from predict import predict_crop
 
-app = Flask(__name__, template_folder=os.path.join(os.path.dirname(__file__), '..', 'templates'))
+app = Flask(__name__,
+           template_folder=os.path.join(os.path.dirname(__file__), '..', 'templates'),
+           static_folder=os.path.join(os.path.dirname(__file__), '..', 'static'),
+           static_url_path='/static')
 
 
 @app.route('/')

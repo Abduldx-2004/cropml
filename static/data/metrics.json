@@ -1,55 +1,55 @@
 {
   "accuracy_percent": {
-    "Random Forest": 100.0,
-    "Gradient Boosting": 100.0,
-    "Decision Tree": 100.0,
-    "KNN": 100.0,
-    "SVM": 100.0,
-    "AdaBoost": 100.0,
-    "Logistic Regression": 100.0
+    "Random Forest": 99.32,
+    "Gradient Boosting": 98.86,
+    "Decision Tree": 97.95,
+    "KNN": 97.95,
+    "SVM": 98.41,
+    "AdaBoost": 17.5,
+    "Logistic Regression": 97.27
   },
   "full_metrics": {
     "Random Forest": {
-      "accuracy": 1.0,
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1_score": 1.0
+      "accuracy": 0.9931818181818182,
+      "precision": 0.9935064935064934,
+      "recall": 0.9931818181818182,
+      "f1_score": 0.9931775541531639
     },
     "Gradient Boosting": {
-      "accuracy": 1.0,
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1_score": 1.0
+      "accuracy": 0.9886363636363636,
+      "precision": 0.989742141916055,
+      "recall": 0.9886363636363636,
+      "f1_score": 0.9887226097483733
     },
     "Decision Tree": {
-      "accuracy": 1.0,
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1_score": 1.0
+      "accuracy": 0.9795454545454545,
+      "precision": 0.9805981896890988,
+      "recall": 0.9795454545454545,
+      "f1_score": 0.979423151374371
     },
     "KNN": {
-      "accuracy": 1.0,
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1_score": 1.0
+      "accuracy": 0.9795454545454545,
+      "precision": 0.9803555030827759,
+      "recall": 0.9795454545454545,
+      "f1_score": 0.9792832328133997
     },
     "SVM": {
-      "accuracy": 1.0,
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1_score": 1.0
+      "accuracy": 0.9840909090909091,
+      "precision": 0.9856099105110961,
+      "recall": 0.9840909090909091,
+      "f1_score": 0.9840381050638686
     },
     "AdaBoost": {
-      "accuracy": 1.0,
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1_score": 1.0
+      "accuracy": 0.175,
+      "precision": 0.11209861967437726,
+      "recall": 0.175,
+      "f1_score": 0.08559519245760285
     },
     "Logistic Regression": {
-      "accuracy": 1.0,
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1_score": 1.0
+      "accuracy": 0.9727272727272728,
+      "precision": 0.974021729904083,
+      "recall": 0.9727272727272728,
+      "f1_score": 0.9724640256149185
     }
   }
 }

@@ -43,8 +43,8 @@ def load_and_preprocess(path=DATA_PATH):
     df = df.dropna()
 
     # Features and target
-    X = df[['Temperature', 'Humidity', 'Rainfall', 'Soil_pH', 'Nitrogen', 'Phosphorus', 'Potassium']]
-    y = df['Crop']
+    X = df[['temperature', 'humidity', 'rainfall', 'ph', 'N', 'P', 'K']]
+    y = df['label']
 
     # Label encode the target
     le = LabelEncoder()

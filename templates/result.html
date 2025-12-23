@@ -3,19 +3,23 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Recommendation Result</title>
+    <title>Your Crop Recommendation</title>
     <link rel="stylesheet" href="/static/css/styles.css" />
   </head>
   <body>
-    <div class="container result-card">
-      <h2>Recommendation Result</h2>
-      <div class="result">
-        <h3>{{ crop }}</h3>
-        <p class="confidence">Confidence: {{ confidence }}%</p>
-        <p class="support">Best crop based on current soil & weather conditions.</p>
+    <div class="container">
+      <div class="result-card">
+        <h2>🎯 Your Recommended Crop</h2>
+        <div class="result">
+          <h3>{{ crop.title() }}</h3>
+          <p class="confidence">Confidence Score: {{ confidence }}%</p>
+          <p class="support">Based on your soil and environmental parameters, this crop is predicted to perform best in your conditions.</p>
+        </div>
+        <div class="actions" style="margin-top: 32px;">
+          <a class="btn" href="/recommend">🔄 Try Different Parameters</a>
+          <a class="btn ghost" href="/">🏠 Back to Home</a>
+        </div>
       </div>
-      <a class="btn" href="/recommend">Try another</a>
-      <a class="btn ghost" href="/">Home</a>
     </div>
     <script src="/static/js/main.js"></script>
   </body>
