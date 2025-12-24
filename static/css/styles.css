@@ -17,10 +17,11 @@ body{margin:0;background:var(--bg);color:var(--text);line-height:1.6;min-height:
 .hero-content{position:relative;z-index:1}
 .hero h1{font-size:3rem;margin:0 0 20px;font-weight:700;letter-spacing:-1px}
 .hero p{margin:0 0 30px;opacity:0.95;font-size:1.2rem}
-.btn{display:inline-block;padding:14px 28px;background:white;color:var(--primary);border-radius:50px;text-decoration:none;margin:8px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;transition:all 0.3s ease;box-shadow:0 4px 15px rgba(0,0,0,0.1)}
+.btn{display:inline-block;padding:14px 28px;background:white;color:var(--primary);border-radius:50px;text-decoration:none;margin:8px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;transition:all 0.3s ease, outline-color 0s;box-shadow:0 4px 15px rgba(0,0,0,0.1)}
 .btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.15)}
-.btn.ghost{background:transparent;color:white;border:2px solid rgba(255,255,255,0.8)}
-.btn.ghost:hover{background:white;color:var(--primary)}
+.btn:focus{outline:3px solid rgba(255,255,255,0.9);outline-offset:2px}
+.btn.ghost{background:rgba(255,255,255,0.15);color:#ffffff;border:2px solid rgba(255,255,255,0.85)}
+.btn.ghost:hover{background:white;color:var(--primary);border-color:white}
 .container{max-width:1200px;margin:40px auto;padding:0 20px}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin:40px 0}
 .card{background:var(--card);padding:32px;border-radius:var(--border-radius);box-shadow:var(--shadow);transition:transform 0.3s ease, box-shadow 0.3s ease;text-align:center}
